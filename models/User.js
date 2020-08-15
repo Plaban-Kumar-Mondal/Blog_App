@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    blogs: [{ blog_id: { type: mongoose.Schema.Types.ObjectId, ref: "Blog" } }],
     secure_password: {
       type: String,
       required: true,
@@ -34,19 +35,21 @@ userSchema
     return this._password;
   });
 
-userSchema.method = {
+userSchema.methods = {
   securePassword: function (plainpassword) {
     if (!plainpassword) return "";
-    try {
-      return bcrypt.genSalt(10, function (err, salt) {
-        // const salt = salt;
-        bcrypt.hash(plainpassword, salt, function (err, hash) {
-          return hash;
-        });
-      });
-    } catch (error) {
-      return "";
-    }
+    // try {
+    //   bcrypt.genSalt(10, function (err, salt) {
+    //     bcrypt.hash(plainpassword, salt, function (err, hash) {
+    //       return hash;
+    //     });
+    //   });
+    // } catch (error) {
+    //   return "";
+    // }
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync(plainpassword, salt);
+    return hash;
   },
 };
 
