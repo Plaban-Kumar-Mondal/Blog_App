@@ -19,6 +19,19 @@ router.post(
   signup
 );
 
+router.post(
+  "/signin",
+  [
+    check("email").isEmail().withMessage("Email should have valid pattern"),
+    check("password")
+      .isLength({ min: 1 })
+      .withMessage("Password is required")
+      .matches(/\d/)
+      .withMessage("Password must contain a number"),
+  ],
+  signup
+);
+
 router.get("/signout", signout);
 
 module.exports = router;
