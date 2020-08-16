@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { signout, signup } = require("../controllers/auth");
+const { signout, signup, signin } = require("../controllers/auth");
 const { check } = require("express-validator");
 
 router.post(
@@ -29,7 +29,7 @@ router.post(
       .matches(/\d/)
       .withMessage("Password must contain a number"),
   ],
-  signup
+  signin
 );
 
 router.get("/signout", signout);
