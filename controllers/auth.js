@@ -19,6 +19,9 @@ exports.signup = (req, res) => {
         error: "Saving User in Database Failed!",
       });
     }
+
+    user.secure_password = undefined;
+
     res.json(user);
   });
 };
