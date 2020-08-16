@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
 
@@ -30,6 +31,8 @@ exports.signup = (req, res) => {
 
 exports.signin = (req, res) => {
   const { email, password } = req.body;
+
+  const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({
       error: errors.array()[0].msg,
@@ -42,8 +45,13 @@ exports.signin = (req, res) => {
         error: "USER Email doesn't exist",
       });
     }
+    const { _id, name, email, secure_password } = user;
 
-    if (!user.authenticate(password)) {
+    const authenticate = (password) => {
+      return bcrypt.compareSync(password, secure_password);
+    };
+
+    if (!authenticate(password)) {
       res.status(401).json({
         error: "Email and Password do not match",
       });
@@ -54,7 +62,6 @@ exports.signin = (req, res) => {
     // put token in cookie
     res.cookie("token", token, { expire: new Date() + 10 });
     // send response to frontend
-    const { _id, name, email } = user;
 
     return res.json({ token, user: { _id, name, email } });
   });

@@ -37,7 +37,7 @@ userSchema
 
 userSchema.methods = {
   authenticate: function (plainpassword) {
-    bcrypt.compareSync(plainpassword, this.securePassword);
+    bcrypt.compareSync(plainpassword, this.secure_password);
   },
 
   securePassword: function (plainpassword) {
