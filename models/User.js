@@ -36,10 +36,6 @@ userSchema
   });
 
 userSchema.methods = {
-  authenticate: function (plainpassword) {
-    bcrypt.compareSync(plainpassword, this.secure_password);
-  },
-
   securePassword: function (plainpassword) {
     if (!plainpassword) return "";
     let salt = bcrypt.genSaltSync(10);
