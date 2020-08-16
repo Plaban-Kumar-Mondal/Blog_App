@@ -1,5 +1,5 @@
 # Blog_App
 A simple blog app build with MERN Stack
 
-# Run this command in the project file
+# :rocket: Run this command in the project file :fire:
 `npm install`
