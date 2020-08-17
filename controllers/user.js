@@ -12,3 +12,9 @@ exports.getUserById = (req, res, next, id) => {
     next();
   });
 };
+
+// show user
+exports.getUser = (req, res) => {
+  req.profile.secure_password = undefined;
+  return res.json(req.profile);
+};
