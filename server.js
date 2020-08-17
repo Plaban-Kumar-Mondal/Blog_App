@@ -8,7 +8,7 @@ const app = express();
 // Requiring Routes
 const indexRoutes = require("./routes/index");
 const authRoutes = require("./routes/auth");
-
+const blogRoutes = require("./routes/blog");
 // DataBase Connection
 const databaseURI = process.env.DATABASE
   ? process.env.DATABASE
@@ -31,6 +31,7 @@ app.use(cookieParser());
 // using routes
 app.use("/api", indexRoutes);
 app.use("/api", authRoutes);
+app.use("/api", blogRoutes);
 
 const PORT = process.env.PORT ? process.env.PORT : 5000;
 app.listen(PORT, () => console.log(`app is running on port ${PORT}`));
