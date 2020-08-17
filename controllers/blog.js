@@ -1,6 +1,19 @@
 const Blog = require("../models/Blog");
 
-// create controller
+// method for params
+exports.getBlogById = (req, res, next, id) => {
+  Blog.findById(id).exec((err, blog) => {
+    if (err || !blog) {
+      return res.status(400).json({
+        error: "No blog was found in DB!",
+      });
+    }
+    req.blog = blog;
+    next();
+  });
+};
+
+// create blog controller
 exports.createBlog = (req, res) => {
   const blog = new Blog(req.body);
 
@@ -13,4 +26,23 @@ exports.createBlog = (req, res) => {
     }
     res.json({ blog });
   });
+};
+
+// get blog controller
+exports.getBlog = (req, res) => {
+  return res.json(req.blog);
+};
+
+// get all blogs controller
+exports.getAllBlog = (req, res) => {
+  Blog.find()
+    .sort({ date: -1 })
+    .exec((err, blogs) => {
+      if (err) {
+        return res.status(400).json({
+          error: "No Blogs found",
+        });
+      }
+      res.json(blogs);
+    });
 };
