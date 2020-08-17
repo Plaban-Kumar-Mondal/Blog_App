@@ -46,3 +46,17 @@ exports.getAllBlog = (req, res) => {
       res.json(blogs);
     });
 };
+
+// update blog controller
+exports.updateBlog = (req, res) => {
+  const updatedBlog = req.body;
+
+  Blog.findByIdAndUpdate(req.blog._id, updatedBlog, (err, updated_Blog) => {
+    if (err) {
+      return res.status(400).json({
+        err,
+      });
+    }
+    return res.json(updated_Blog);
+  });
+};
