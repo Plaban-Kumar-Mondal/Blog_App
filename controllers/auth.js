@@ -4,6 +4,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
 
+// Top level declaration
+const secret = process.env.SECRET ? process.env.SECRET : "top-level-secret";
+
 exports.signup = (req, res) => {
   const errors = validationResult(req);
 
@@ -57,7 +60,6 @@ exports.signin = (req, res) => {
       });
     }
 
-    const secret = process.env.SECRET ? process.env.SECRET : "top-level-secret";
     const token = jwt.sign({ _id: user._id }, secret);
     // put token in cookie
     res.cookie("token", token, { expire: new Date() + 10 });
@@ -73,3 +75,9 @@ exports.signout = (req, res) => {
     message: "User signout successfully",
   });
 };
+
+// protected routes middleware
+exports.isSignedIn = expressJwt({
+  secret,
+  userProperty: "auth",
+});
