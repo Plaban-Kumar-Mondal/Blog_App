@@ -23,5 +23,6 @@ router.get("/blog/:blogId", isSignedIn, getBlog);
 router.put("/blog/:blogId/:userId", isSignedIn, isAuthenticated, updateBlog);
 
 // Delete route for blog
+router.delete("/blog/:blogId/:userId", isSignedIn, isAuthenticated);
 
 module.exports = router;

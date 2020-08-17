@@ -60,3 +60,17 @@ exports.updateBlog = (req, res) => {
     return res.json(updated_Blog);
   });
 };
+
+// Delete blog controller
+exports.deleteBlog = (req, res) => {
+  Blog.findByIdAndRemove(req.blog._id, (err, msg) => {
+    if (err) {
+      return res.json({
+        error: err,
+      });
+    }
+    return res.json({
+      message: "Blog successfully deleted",
+    });
+  });
+};
