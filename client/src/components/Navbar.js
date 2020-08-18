@@ -12,7 +12,7 @@ class Navbar extends Component {
   render() {
     return (
       <section>
-        <nav className="indigo darken-4">
+        <nav className="purple darken-3">
           <div className="container">
             <div class="nav-wrapper">
               <a href="#" class="brand-logo">
