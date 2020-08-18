@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 class Navbar extends Component {
   componentDidMount() {
@@ -15,21 +16,19 @@ class Navbar extends Component {
         <nav className="purple darken-3">
           <div className="container">
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo">
-                Blog App
-              </a>
+              <a class="brand-logo">Blog App</a>
               <a className="sidenav-trigger right" data-target="mobile-links">
                 <i className="material-icons">menu</i>
               </a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                  <a href="sass.html">Home</a>
+                  <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                  <a href="badges.html">Signup</a>
+                  <NavLink to="/signup">Signup</NavLink>
                 </li>
                 <li>
-                  <a href="collapsible.html">Login</a>
+                  <NavLink to="/login">Login</NavLink>
                 </li>
               </ul>
             </div>
@@ -38,13 +37,13 @@ class Navbar extends Component {
 
         <ul className="sidenav" id="mobile-links">
           <li>
-            <a href="sass.html">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="badges.html">Signup</a>
+            <NavLink to="/signup">Signup</NavLink>
           </li>
           <li>
-            <a href="collapsible.html">Login</a>
+            <NavLink to="/login">Login</NavLink>
           </li>
         </ul>
       </section>

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 const Home = () => {
   const footerElement = () => {
@@ -24,7 +23,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <section className="container">
         <div class="row">
           <div class="col s12">
