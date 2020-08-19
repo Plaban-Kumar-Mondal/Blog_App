@@ -7,9 +7,9 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col s12 m8">
-              <h5 className="white-text">
+              <h6 className="white-text">
                 © 2020 Copyright Plaban Kumar Mondal
-              </h5>
+              </h6>
               <p className="gry-text lighten-3">This is made with MERN Stack</p>
             </div>
             <div className="col s12 m4">
