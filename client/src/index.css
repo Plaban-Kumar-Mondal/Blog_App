@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h2.welcome-msg,
+h4.welcome-msg {
+  font-weight: 300;
+}
+
+h5.profile-email,
+h6.profile-email {
+  font-weight: 200;
+}
+
+button.btn {
+  margin-top: 0.5rem;
+  padding: 0 70px;
+}
+
+#profile {
+  position: relative;
+}
+
+button#rigth-btn {
+  right: 0px;
+  position: absolute;
+}
+
+@media (max-width: 500px) {
+  h2.welcome-msg {
+    font-size: 2.19rem;
+  }
+  h5.profile-email {
+    font-size: 1.25rem;
+  }
+}
