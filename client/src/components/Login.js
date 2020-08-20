@@ -55,12 +55,14 @@ const form = () => {
             </div>
           </div>
 
-          <button
-            className="waves-effect waves-light btn purple darken-3"
-            type="submit"
-          >
-            Login
-          </button>
+          <div className="center">
+            <button
+              className="waves-effect waves-light btn purple darken-3"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
         </Form>
       </div>
     </Formik>

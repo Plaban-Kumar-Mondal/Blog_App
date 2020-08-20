@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 
 // Requiring Routes
-const indexRoutes = require("./routes/index");
+// const indexRoutes = require("./routes/index");
 const authRoutes = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
 // DataBase Connection
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // using routes
-app.use("/api", indexRoutes);
+// app.use("/api", indexRoutes);
 app.use("/api", authRoutes);
 app.use("/api", blogRoutes);
 
