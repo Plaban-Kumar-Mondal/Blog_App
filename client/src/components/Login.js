@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { login, authenticate } from "../apiCalls/authAPI";
 
 const initialValues = {
   email: "",
@@ -8,7 +9,14 @@ const initialValues = {
 };
 
 const onSubmit = (values) => {
-  console.log(values);
+  // console.log(values);
+  login(values).then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      authenticate(data);
+    }
+  });
 };
 
 const validationSchema = Yup.object({

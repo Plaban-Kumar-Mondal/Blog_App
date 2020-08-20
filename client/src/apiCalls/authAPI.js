@@ -22,6 +22,23 @@ export const signup = (user) => {
     });
 };
 
+export const login = (user) => {
+  return fetch(`/api/login`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 export const isAuthenticated = () => {
   if (typeof window == "undefined") {
     return false;
