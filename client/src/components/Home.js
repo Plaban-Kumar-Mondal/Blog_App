@@ -24,11 +24,11 @@ const Home = () => {
   return (
     <div>
       <section className="container">
-        <div class="row">
-          <div class="col s12">
-            <div class="card indigo lighten-5">
-              <div class="card-content ">
-                <span class="card-title center-align">Card Title</span>
+        <div className="row">
+          <div className="col s12">
+            <div className="card indigo lighten-5">
+              <div className="card-content ">
+                <span className="card-title center-align">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -38,10 +38,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div class="col s12">
-            <div class="card indigo lighten-5">
-              <div class="card-content">
-                <span class="card-title">Card Title</span>
+          <div className="col s12">
+            <div className="card indigo lighten-5">
+              <div className="card-content">
+                <span className="card-title">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -51,10 +51,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div class="col s12">
-            <div class="card purple darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
+          <div className="col s12">
+            <div className="card purple darken-1">
+              <div className="card-content white-text">
+                <span className="card-title">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -64,10 +64,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div class="col s12">
-            <div class="card purple darken-1">
-              <div class="card-content white-text">
-                <span class="card-title center-align">Card Title</span>
+          <div className="col s12">
+            <div className="card purple darken-1">
+              <div className="card-content white-text">
+                <span className="card-title center-align">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -77,10 +77,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div class="col s12">
-            <div class="card purple darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
+          <div className="col s12">
+            <div className="card purple darken-1">
+              <div className="card-content white-text">
+                <span className="card-title">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
