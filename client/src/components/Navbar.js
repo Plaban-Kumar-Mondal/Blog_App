@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
+import { isAuthenticated } from "../apiCalls/authAPI";
 
 class Navbar extends Component {
   componentDidMount() {
@@ -24,17 +25,21 @@ class Navbar extends Component {
                 <li>
                   <NavLink to="/">Home</NavLink>
                 </li>
-                <Fragment>
+                {!isAuthenticated() && (
+                  <Fragment>
+                    <li>
+                      <NavLink to="/signup">Signup</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/login">Login</NavLink>
+                    </li>
+                  </Fragment>
+                )}
+                {isAuthenticated() && (
                   <li>
-                    <NavLink to="/signup">Signup</NavLink>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
-                  <li>
-                    <NavLink to="/login">Login</NavLink>
-                  </li>
-                </Fragment>
-                <li>
-                  <NavLink to="/profile">Profile</NavLink>
-                </li>
+                )}
               </ul>
             </div>
           </div>
@@ -44,17 +49,21 @@ class Navbar extends Component {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <Fragment>
+          {!isAuthenticated() && (
+            <Fragment>
+              <li>
+                <NavLink to="/signup">Signup</NavLink>
+              </li>
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            </Fragment>
+          )}
+          {isAuthenticated() && (
             <li>
-              <NavLink to="/signup">Signup</NavLink>
+              <NavLink to="/profile">Profile</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-          </Fragment>
-          <li>
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
+          )}
         </ul>
       </section>
     );

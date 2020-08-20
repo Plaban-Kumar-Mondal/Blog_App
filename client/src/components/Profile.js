@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { isAuthenticated } from "../apiCalls/authAPI";
 
 const Profile = () => {
+  const { user } = isAuthenticated();
+
   return (
     <div className="container" id="profile">
-      <h2 className="welcome-msg">Welcome, Plaban</h2>
-      <h5 className="profile-email">plabanmondal02@gmail.com</h5>
+      <h2 className="welcome-msg">Welcome, {user.name}</h2>
+      <h5 className="profile-email"> {user.email} </h5>
       <hr />
       <div className="row">
         <div className="col s12 m6 center">
