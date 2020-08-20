@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 class Navbar extends Component {
@@ -24,12 +24,14 @@ class Navbar extends Component {
                 <li>
                   <NavLink to="/">Home</NavLink>
                 </li>
-                <li>
-                  <NavLink to="/signup">Signup</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/login">Login</NavLink>
-                </li>
+                <Fragment>
+                  <li>
+                    <NavLink to="/signup">Signup</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
+                </Fragment>
                 <li>
                   <NavLink to="/profile">Profile</NavLink>
                 </li>
@@ -42,12 +44,14 @@ class Navbar extends Component {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
-            <NavLink to="/signup">Signup</NavLink>
-          </li>
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
+          <Fragment>
+            <li>
+              <NavLink to="/signup">Signup</NavLink>
+            </li>
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+          </Fragment>
           <li>
             <NavLink to="/profile">Profile</NavLink>
           </li>

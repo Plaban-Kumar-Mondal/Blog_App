@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { signup } from "../apiCalls/authAPI";
 
 const initialValues = {
   name: "",
@@ -9,7 +10,8 @@ const initialValues = {
 };
 
 const onSubmit = (values) => {
-  console.log(values);
+  // console.log(values);
+  signup(values);
 };
 
 const validationSchema = Yup.object({
@@ -28,7 +30,7 @@ const form = () => {
       <div className="row">
         <Form className="col s12">
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <label htmlFor="name">Name</label>
               <Field type="text" name="name" id="name" className="validate" />
               <ErrorMessage className="red-text" name="name" component="div" />
@@ -36,7 +38,7 @@ const form = () => {
           </div>
 
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <label htmlFor="email">Email</label>
               <Field
                 type="email"
@@ -49,7 +51,7 @@ const form = () => {
           </div>
 
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <label htmlFor="password">Password</label>
               <Field
                 type="password"
@@ -65,12 +67,14 @@ const form = () => {
             </div>
           </div>
 
-          <button
-            className="waves-effect waves-light btn purple darken-3"
-            type="submit"
-          >
-            Signup
-          </button>
+          <div className="center">
+            <button
+              className="waves-effect waves-light btn purple darken-3"
+              type="submit"
+            >
+              Signup
+            </button>
+          </div>
         </Form>
       </div>
     </Formik>
