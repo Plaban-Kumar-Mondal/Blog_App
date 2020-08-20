@@ -48,6 +48,13 @@ exports.signin = (req, res) => {
         error: "USER Email doesn't exist",
       });
     }
+
+    if (!user) {
+      return res.status(400).json({
+        error: "No user exist",
+      });
+    }
+
     const { _id, name, email, secure_password } = user;
 
     const authenticate = (password) => {

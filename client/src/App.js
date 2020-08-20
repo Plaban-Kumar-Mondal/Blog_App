@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
@@ -15,8 +16,8 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/blog/create" component={BlogAdd} />
+        <PrivateRoute exact path="/profile" component={Profile} />
+        <PrivateRoute exact path="/blog/create" component={BlogAdd} />
       </div>
     </BrowserRouter>
   );
