@@ -21,10 +21,10 @@ const Profile = () => {
       </div>
 
       <section className="row">
-        <div class="col s12">
-          <div class="card indigo lighten-5">
-            <div class="card-content ">
-              <span class="card-title center-align">Card Title</span>
+        <div className="col s12">
+          <div className="card indigo lighten-5">
+            <div className="card-content ">
+              <span className="card-title center-align">Card Title</span>
               <p>
                 I am a very simple card. I am good at containing small bits of
                 information. I am convenient because I require little markup to
@@ -37,10 +37,10 @@ const Profile = () => {
 
       <Link
         to="/blog/create"
-        class="btn-floating btn-large waves-effect waves-light light-green accent-3"
+        className="btn-floating btn-large waves-effect waves-light light-green accent-3"
         id="rigth-btn"
       >
-        <i class="material-icons">edit</i>
+        <i className="material-icons">edit</i>
       </Link>
     </div>
   );
