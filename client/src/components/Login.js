@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { login, authenticate } from "../apiCalls/authAPI";
+import { Redirect } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -14,7 +15,9 @@ const onSubmit = (values) => {
     if (data.error) {
       console.log(data.error);
     } else {
-      authenticate(data);
+      authenticate(data, () => {
+        console.log("User logged in");
+      });
     }
   });
 };
@@ -34,7 +37,7 @@ const form = () => {
       <div className="row">
         <Form className="col s12">
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <label htmlFor="email">Email</label>
               <Field
                 type="email"
@@ -47,7 +50,7 @@ const form = () => {
           </div>
 
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <label htmlFor="password">Password</label>
               <Field
                 type="password"
