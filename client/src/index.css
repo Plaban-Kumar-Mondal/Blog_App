@@ -31,7 +31,7 @@ button.btn {
   position: relative;
 }
 
-button#rigth-btn {
+a#rigth-btn {
   right: 0px;
   position: absolute;
 }

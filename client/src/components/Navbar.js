@@ -15,12 +15,12 @@ class Navbar extends Component {
       <section>
         <nav className="purple darken-3">
           <div className="container">
-            <div class="nav-wrapper">
-              <a class="brand-logo">Blog App</a>
+            <div className="nav-wrapper">
+              <a className="brand-logo">Blog App</a>
               <a className="sidenav-trigger right" data-target="mobile-links">
                 <i className="material-icons">menu</i>
               </a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li>
                   <NavLink to="/">Home</NavLink>
                 </li>

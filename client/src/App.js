@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import BlogAdd from "./components/BlogAdd";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/blog/create" component={BlogAdd} />
       </div>
     </BrowserRouter>
   );

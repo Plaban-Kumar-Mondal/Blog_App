@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
@@ -8,7 +9,7 @@ const Profile = () => {
       <hr />
       <div className="row">
         <div className="col s12 m6 center">
-          <button className="waves-effect waves-light btn purple darken-3">
+          <button className="waves-effect waves-light btn purple darken-3 disabled">
             Edit Profile
           </button>
         </div>
@@ -34,12 +35,13 @@ const Profile = () => {
         </div>
       </section>
 
-      <button
+      <Link
+        to="/blog/create"
         class="btn-floating btn-large waves-effect waves-light light-green accent-3"
         id="rigth-btn"
       >
         <i class="material-icons">edit</i>
-      </button>
+      </Link>
     </div>
   );
 };
