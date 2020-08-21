@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { isAuthenticated } from "../apiCalls/authAPI";
+import { isAuthenticated, signout } from "../apiCalls/authAPI";
 
-const Profile = () => {
+const Profile = ({ history }) => {
   const { user } = isAuthenticated();
+
+  const logout = () => {
+    signout(() => history.push("/"));
+  };
 
   return (
     <div className="container" id="profile">
@@ -17,7 +21,10 @@ const Profile = () => {
           </button>
         </div>
         <div className="col s12 m6 center">
-          <button className="waves-effect waves-light btn red accent-4">
+          <button
+            className="waves-effect waves-light btn red accent-4"
+            onClick={logout}
+          >
             Logout
           </button>
         </div>
