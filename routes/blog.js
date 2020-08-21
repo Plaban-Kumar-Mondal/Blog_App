@@ -5,6 +5,7 @@ const {
   getBlog,
   getBlogById,
   updateBlog,
+  getAllBlog,
 } = require("../controllers/blog");
 const { isSignedIn, isAuthenticated } = require("../controllers/auth");
 const { getUserById } = require("../controllers/user");
@@ -24,5 +25,8 @@ router.put("/blog/:blogId/:userId", isSignedIn, isAuthenticated, updateBlog);
 
 // Delete route for blog
 router.delete("/blog/:blogId/:userId", isSignedIn, isAuthenticated);
+
+//  GET ALL BLOGS
+router.get("/blogs", getAllBlog);
 
 module.exports = router;
