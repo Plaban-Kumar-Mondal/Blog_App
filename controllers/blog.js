@@ -1,4 +1,5 @@
 const Blog = require("../models/Blog");
+const User = require("../models/User");
 
 // method for params
 exports.getBlogById = (req, res, next, id) => {
@@ -18,12 +19,28 @@ exports.createBlog = (req, res) => {
   const blog = new Blog(req.body);
 
   blog.save((err, blog) => {
+    console.log(req.profile);
     if (err) {
       return res.status(400).json({
         message: "Not able to save the blog",
         error: err,
       });
     }
+
+    const updatedProfile = req.profile;
+    updatedProfile.blogs.push({ blog });
+    User.findByIdAndUpdate(
+      req.profile._id,
+      updatedProfile,
+      (err, updatedUser) => {
+        if (err) {
+          return res.status(400).json({
+            err,
+          });
+        }
+        // console.log(updatedUser);
+      }
+    );
     res.json({ blog });
   });
 };
