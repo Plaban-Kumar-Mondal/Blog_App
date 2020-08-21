@@ -1,3 +1,11 @@
+export const getAllBlogs = () => {
+  return fetch(`/api/blogs`, {
+    method: "GET",
+  })
+    .then((response) => response.json)
+    .catch((err) => console.log(err));
+};
+
 export const createBlog = (userId, token, blog) => {
   return fetch(`/api/blog/create/${userId}`, {
     method: "POST",

@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getAllBlogs } from "../apiCalls/blogAPI";
 
 const Home = () => {
+  const [allBlogs, setAllBlogs] = useState([]);
+
+  const loadAllBlogs = () => {
+    getAllBlogs().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setAllBlogs(data);
+      }
+    });
+  };
+
+  useEffect(() => {
+    loadAllBlogs();
+  });
+
   const footerElement = () => {
     return (
       <footer className="page-footer purple darken-3">
