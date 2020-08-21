@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Navbar from "./components/Navbar";
@@ -9,6 +9,8 @@ import Profile from "./components/Profile";
 import BlogAdd from "./components/BlogAdd";
 
 const App = () => {
+  useEffect(() => {});
+
   return (
     <BrowserRouter>
       <div className="App">

@@ -67,19 +67,6 @@ const Home = () => {
           <div className="col s12">
             <div className="card purple darken-1">
               <div className="card-content white-text">
-                <span className="card-title center-align">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col s12">
-            <div className="card purple darken-1">
-              <div className="card-content white-text">
                 <span className="card-title">Card Title</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
