@@ -1,15 +1,28 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { isAuthenticated } from "../apiCalls/authAPI";
+import { createBlog } from "../apiCalls/blogAPI";
 
 const initialValues = {
   title: "",
-  author: "",
+  author: {},
   body: "",
 };
 
+const { user, token } = isAuthenticated();
+
 const onSubmit = (values) => {
+  values.author.id = user._id;
+  values.author.name = user.name;
   console.log(values);
+  createBlog(user._id, token, values).then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      console.log("Blog Added");
+    }
+  });
 };
 
 const validationSchema = Yup.object({
