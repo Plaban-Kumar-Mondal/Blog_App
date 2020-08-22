@@ -9,14 +9,16 @@ const Home = () => {
       if (data.error) {
         console.log(data.error);
       } else {
-        setAllBlogs(data);
+        setAllBlogs(["name", "1233", "wefjnfew"]);
+        console.log("Data", data);
+        console.log("All Blogs", allBlogs);
       }
     });
   };
 
   useEffect(() => {
     loadAllBlogs();
-  });
+  }, []);
 
   const footerElement = () => {
     return (
@@ -42,57 +44,21 @@ const Home = () => {
     <div>
       <section className="container">
         <div className="row">
-          <div className="col s12">
-            <div className="card indigo lighten-5">
-              <div className="card-content ">
-                <span className="card-title center-align">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
+          {/* {allBlogs.map((blog, index) => {
+            return (
+              <div key={index} className="col s12">
+                <div className="card indigo lighten-5">
+                  <div className="card-content ">
+                    <span className="card-title center-align">
+                      {blog.title}
+                    </span>
+                    <h5>{blog.author}</h5>
+                    <p>{blog.body}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="col s12">
-            <div className="card indigo lighten-5">
-              <div className="card-content">
-                <span className="card-title">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col s12">
-            <div className="card purple darken-1">
-              <div className="card-content white-text">
-                <span className="card-title">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col s12">
-            <div className="card purple darken-1">
-              <div className="card-content white-text">
-                <span className="card-title">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-            </div>
-          </div>
+            );
+          })} */}
         </div>
       </section>
       {footerElement()}

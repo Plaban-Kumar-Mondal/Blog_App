@@ -1,8 +1,8 @@
-export const getAllBlogs = () => {
+export const getAllBlogs = (req, res) => {
   return fetch(`/api/blogs`, {
     method: "GET",
   })
-    .then((response) => response.json)
+    .then((response) => response.json())
     .catch((err) => console.log(err));
 };
 

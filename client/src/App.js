@@ -8,8 +8,8 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import BlogAdd from "./components/BlogAdd";
 
-const App = () => {
-  useEffect(() => {});
+const App = (props) => {
+  useEffect(() => {}, [props.location]);
 
   return (
     <BrowserRouter>
