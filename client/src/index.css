@@ -12,13 +12,21 @@ code {
     monospace;
 }
 
-h2.welcome-msg,
-h4.welcome-msg {
+h2.welcome-msg {
   font-weight: 300;
 }
 
-h5.profile-email,
-h6.profile-email {
+h5.profile-email {
+  font-weight: 200;
+}
+
+h2#card-title {
+  font-size: 3rem;
+}
+
+h5.blog-author {
+  font-size: 1.5rem;
+  font-style: italic;
   font-weight: 200;
 }
 

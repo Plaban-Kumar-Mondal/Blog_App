@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import { getAllBlogs } from "../apiCalls/blogAPI";
 
 const Home = () => {
-  const [allBlogs, setAllBlogs] = useState([]);
+  const [allblogs, setAllblogs] = useState([]);
 
   const loadAllBlogs = () => {
     getAllBlogs().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
-        setAllBlogs(["name", "1233", "wefjnfew"]);
-        console.log("Data", data);
-        console.log("All Blogs", allBlogs);
+        setAllblogs(data);
       }
     });
   };
@@ -44,21 +42,23 @@ const Home = () => {
     <div>
       <section className="container">
         <div className="row">
-          {/* {allBlogs.map((blog, index) => {
+          {allblogs.map((blog, index) => {
             return (
               <div key={index} className="col s12">
                 <div className="card indigo lighten-5">
                   <div className="card-content ">
-                    <span className="card-title center-align">
+                    <h2 id="card-title" className="card-title center-align">
                       {blog.title}
-                    </span>
-                    <h5>{blog.author}</h5>
+                    </h2>
+                    <h5 className="blog-author right-align">
+                      -by {blog.author.name}
+                    </h5>
                     <p>{blog.body}</p>
                   </div>
                 </div>
               </div>
             );
-          })} */}
+          })}
         </div>
       </section>
       {footerElement()}
